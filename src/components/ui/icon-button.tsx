@@ -1,8 +1,7 @@
-"use client";
-
-import { MouseEventHandler } from "react";
-import Button from "./button";
 import { cn } from "@/lib/utlis";
+import { MouseEventHandler } from "react";
+
+
 
 interface IconButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
@@ -10,19 +9,21 @@ interface IconButtonProps {
   className?: string;
 }
 
-const IconButton: React.FC<IconButtonProps> = ({onClick, className, icon}) => {
+const IconButton: React.FC<IconButtonProps> = ({
+  onClick,
+  icon,
+  className,
+}) => {
   return (
-    <div>
-      <Button
-        onClick={onClick}
-        className={cn(
-          "items-center justify-center flex rounded-full bg-white border shadow-md p-2 hover:scale-110 transition",
-          className
-        )}
-      >
-        {icon}
-      </Button>
-    </div>
+    <button
+      onClick={onClick}
+      className={cn(
+        "rounded-full flex items-center justify-center bg-white border shadow-md p-2 hover:scale-110 transition",
+        className
+      )}
+    >
+      {icon}
+    </button>
   );
 };
 
